@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, session, redirect, url_for, flash, request
-from app.models import Product, User, Order, OrderItem
-from app import db
+from .models import Product, User, Order, OrderItem
+from .. import db
 
 bp = Blueprint('main', __name__)
 
