@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="color: var(--color-principal);">Tu Carrito de Compras</h1>
+
+{% if cart_items %}
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio Unit.</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+            <tr>
+                <td>{{ item.product.nombre }}</td>
+                <td>${{ "%.2f"|format(item.product.precio) }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ "%.2f"|format(item.subtotal) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" style="text-align: right; font-weight: bold;">Total a Pagar:</td>
+                <td style="font-weight: bold; color: var(--color-verde); font-size: 1.2rem;">${{ "%.2f"|format(total) }}</td>
+            </tr>
+        </tfoot>
+    </table>
+    
+    <div style="margin-top: 2rem; text-align: right;">
+        <a href="{{ url_for('main.index') }}" class="btn btn-secondary" style="margin-right: 1rem;">Seguir Comprando</a>
+        <a href="{{ url_for('main.checkout') }}" class="btn btn-success">Proceder al Pago</a>
+    </div>
+{% else %}
+    <p>Tu carrito está vacío. ¡Explora el <a href="{{ url_for('main.index') }}" style="color: var(--color-principal);">catálogo</a> para encontrar productos increíbles!</p>
+{% endif %}
+{% endblock %}

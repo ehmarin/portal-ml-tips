@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="text-align: center; color: var(--color-principal);">Nuestro Catálogo de Cuidado</h1>
+<p style="text-align: center; margin-bottom: 2rem;">Descubre nuestros productos pensados especialmente para la mujer.</p>
+
+<div class="products-grid">
+    {% for product in products %}
+    <div class="product-card">
+        <div class="product-img">
+            <span>{{ product.imagen_url }} (Imagen)</span>
+        </div>
+        <h3 style="color: var(--color-texto);">{{ product.nombre }}</h3>
+        <p style="font-size: 0.9rem; color: #666;">{{ product.descripcion }}</p>
+        <div class="price">${{ "%.2f"|format(product.precio) }}</div>
+        <a href="{{ url_for('main.add_to_cart', product_id=product.id) }}" class="btn">Añadir al carrito</a>
+    </div>
+    {% else %}
+    <p style="text-align: center; grid-column: 1 / -1;">No hay productos disponibles por el momento.</p>
+    {% endfor %}
+</div>
+{% endblock %}
