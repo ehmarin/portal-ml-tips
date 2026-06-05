@@ -26,12 +26,12 @@ docker run --rm -v $(pwd):/app mltips-app python init_db.py
 ### 3. Ejecutar la Aplicación
 Levantaremos el contenedor mapeando el puerto 5000 de Tierra hacia el 5000 del contenedor:
 ```bash
-docker run -d -p 5000:5000 -v $(pwd):/app --name portal-mltips mltips-app
+docker run -d -p 5001:5001 -v $(pwd):/app --name portal-mltips mltips-app
 ```
 
 ### 4. Validar el funcionamiento
 Abre un navegador en Tierra (o desde Mercurio apuntando a la IP de Tierra) e ingresa a:
-`http://localhost:5000` (o `http://192.168.31.10:5000`)
+`http://localhost:5001` (o `http://192.168.31.10:5001`)
 
 ## Detener y Limpiar el Contenedor
 Si necesitas detener la aplicación en el futuro, ejecuta:
