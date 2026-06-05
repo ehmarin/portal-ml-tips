@@ -21,6 +21,6 @@
 - [x] Implementar vista simulada de Checkout/Registro básico.
 
 ## Fase 4: Despliegue y Pruebas
-- [ ] Probar la construcción del contenedor Docker localmente.
-- [ ] Ejecutar el contenedor y validar el flujo completo (Ver catálogo -> Añadir al carrito -> Pagar).
-- [ ] Documentar instrucciones de despliegue en Zorin OS en el `README.md`.
+- [x] Probar la construcción del contenedor Docker localmente.
+- [x] Ejecutar el contenedor y validar el flujo completo (Ver catálogo -> Añadir al carrito -> Pagar).
+- [x] Documentar instrucciones de despliegue en Zorin OS en el `README.md`.
